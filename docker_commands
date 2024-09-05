@@ -1,0 +1,36 @@
+## Docker commands used to build the application 
+docker build . -f Dockerfile --no-cache -t techtrends
+
+## Docker commands used to run the application
+docker run -d -p :7111:3111 -name techtrends_app techtrends
+
+## Docker commands used to get the application logs
+docker logs techtrends_app
+
+## Logs from the container running the TechTrends application
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+WARNING:werkzeug:2024-08-29 23:23:45,155  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug:2024-08-29 23:23:45,156  * Running on http://172.17.0.3:3111/ (Press CTRL+C to quit)
+INFO:__main__:2024-08-29 23:24:01,245 About page is accessed!
+INFO:werkzeug:2024-08-29 23:24:01,269 172.17.0.1 - - [29/Aug/2024 23:24:01] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:2024-08-29 23:24:01,286 172.17.0.1 - - [29/Aug/2024 23:24:01] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:__main__:2024-08-29 23:24:01,399 About page is accessed!
+INFO:werkzeug:2024-08-29 23:24:01,401 172.17.0.1 - - [29/Aug/2024 23:24:01] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:2024-08-29 23:24:01,442 172.17.0.1 - - [29/Aug/2024 23:24:01] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:__main__:2024-08-29 23:24:01,556 About page is accessed!
+INFO:werkzeug:2024-08-29 23:24:01,557 172.17.0.1 - - [29/Aug/2024 23:24:01] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:2024-08-29 23:24:01,594 172.17.0.1 - - [29/Aug/2024 23:24:01] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:__main__:2024-08-29 23:24:01,717 About page is accessed!
+INFO:werkzeug:2024-08-29 23:24:01,718 172.17.0.1 - - [29/Aug/2024 23:24:01] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:2024-08-29 23:24:01,794 172.17.0.1 - - [29/Aug/2024 23:24:01] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:__main__:2024-08-29 23:24:01,880 About page is accessed!
+INFO:werkzeug:2024-08-29 23:24:01,881 172.17.0.1 - - [29/Aug/2024 23:24:01] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:2024-08-29 23:24:01,920 172.17.0.1 - - [29/Aug/2024 23:24:01] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:2024-08-29 23:24:04,510 172.17.0.1 - - [29/Aug/2024 23:24:04] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:2024-08-29 23:24:04,540 172.17.0.1 - - [29/Aug/2024 23:24:04] "GET /static/css/main.css HTTP/1.1" 304 -
+
