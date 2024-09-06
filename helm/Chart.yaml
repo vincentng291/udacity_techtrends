@@ -1,0 +1,10 @@
+apiVersion: v2
+name: techtrends
+description: A Helm chart for Kubernetes
+keywords: techtrends
+type: application
+version: 1.0.0
+
+maintainers: # (optional)
+  - name: Vincent
+    email: nguyenthang291@gmail.com

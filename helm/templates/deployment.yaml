@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Chart.name }}
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Chart.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Chart.name }}
+    spec:
+      containers:
+      - name: {{ .Chart.name }}
+        image: techtrends:{{ .Values.image_tag }}
+        ports:
+        - containerPort: {{ .Values.containerPort }}
+        resources:
+          requests:
+            cpu: {{ .Values.resources.requests.memory}}
+            memory: {{ .Values.resources.requests.cpu}}
+          limits:
+            cpu: {{ .Values.resources.limits.memory}}
+            memory: {{ .Values.resources.limits.cpu}}
+        livenessProbe:
+          httpGet:
+            path: {{ .Values.livenessProbe.path}}
+            port: {{ .Values.containerPort }}
+          initialDelaySeconds: 3
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: {{ .Values.readinessProbe.path}}
+            port: {{ .Values.containerPort }}
+          initialDelaySeconds: 3
+          periodSeconds: 3
