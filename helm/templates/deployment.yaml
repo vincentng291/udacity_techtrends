@@ -20,14 +20,14 @@ spec:
         - containerPort: {{ .Values.containerPort }}
         resources:
           requests:
-            cpu: {{ .Values.resources.requests.memory}}
-            memory: {{ .Values.resources.requests.cpu}}
+            cpu: {{ .Values.resources.requests.memory }}
+            memory: {{ .Values.resources.requests.cpu} }
           limits:
-            cpu: {{ .Values.resources.limits.memory}}
-            memory: {{ .Values.resources.limits.cpu}}
+            cpu: {{ .Values.resources.limits.memory }}
+            memory: {{ .Values.resources.limits.cpu }}
         livenessProbe:
           httpGet:
-            path: {{ .Values.livenessProbe.path}}
+            path: {{ .Values.livenessProbe.path }}
             port: {{ .Values.containerPort }}
           initialDelaySeconds: 3
           periodSeconds: 3
