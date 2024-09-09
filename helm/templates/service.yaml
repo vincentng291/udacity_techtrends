@@ -4,6 +4,8 @@ metadata:
   name: techtrends
   namespace: {{ .Values.namespace.name }}
 spec:
+  selector:
+    app: techtrends
   type: {{ .Values.service.type}}
   ports:
     - protocol: {{ .Values.service.protocol }}
