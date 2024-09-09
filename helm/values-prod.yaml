@@ -1,4 +1,5 @@
-namespace: prod
+namespace:
+  name: prod
 replicaCount: 5
 
 image:
